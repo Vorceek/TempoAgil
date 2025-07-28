@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | TempoÁgil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link rel="stylesheet" href="{% static 'login-register/css/login.css' %}">
+</head>
+<body>
+  <div class="login-container">
+    <h2><i class="fa-solid fa-calendar-check"></i> TempoÁgil</h2>
+    <form method="post" autocomplete="off">
+      {% csrf_token %}
+      <div class="input-group">
+        <label for="username">Usuário</label>
+        <span class="input-icon"><i class="fa-solid fa-user"></i></span>
+        <input type="text" id="username" name="username" placeholder="Digite seu usuário" required autofocus>
+      </div>
+      <div class="input-group">
+        <label for="password">Senha</label>
+        <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+      </div>
+      <button type="submit"><i class="fa-solid fa-arrow-right-to-bracket"></i> Entrar</button>
+    </form>
+    <div class="links">
+      <a href="#">Esqueceu a senha?</a>
+      <a href="{% url 'register' %}">Criar conta</a>
+    </div>
+    {% if error %}
+      <p class="error"><i class="fa-solid fa-circle-exclamation"></i> {{ error }}</p>
+    {% endif %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agenda | Sua Rotina com Produtividade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    :root {
+      --accent: #7ec8c8;
+      --accent-hover: #6cb2b2;
+      --bg: #0e0e0e;
+      --text: #e0e0e0;
+      --muted: #aaaaaa;
+      --box: #1c1c1c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-buttons a {
+      background-color: var(--accent);
+      color: #000;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .cta-buttons a:hover {
+      background-color: var(--accent-hover);
+    }
+
+    section.features {
+      padding: 80px 0 60px;
+      background-color: var(--box);
+    }
+
+    .features-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .feature {
+      background-color: #111;
+      padding: 30px;
+      border-radius: 12px;
+      transition: transform 0.2s ease;
+      box-shadow: 0 0 10px #00000044;
+      text-align: center;
+    }
+
+    .feature:hover {
+      transform: translateY(-6px);
+    }
+
+    .feature i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .feature h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    section.how-it-works {
+      padding: 80px 0;
+    }
+
+    .how-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .how-step {
+      background: #1a1a1a;
+      border-left: 4px solid var(--accent);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .how-step h3 {
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .how-step p {
+      color: var(--muted);
+    }
+
+    section.testimonials {
+      padding: 80px 0;
+      background-color: var(--box);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .testimonial {
+      background: #111;
+      border-radius: 10px;
+      padding: 25px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      position: relative;
+    }
+
+    .testimonial::before {
+      content: "“";
+      font-size: 2.5rem;
+      color: var(--accent);
+      position: absolute;
+      top: -10px;
+      left: 15px;
+    }
+
+    .testimonial p {
+      margin-bottom: 10px;
+    }
+
+    .testimonial strong {
+      color: var(--text);
+    }
+
+    footer {
+      padding: 50px 20px;
+      background: #111;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    footer nav {
+      margin-bottom: 20px;
+    }
+
+    footer nav a {
+      margin: 0 15px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .cta-buttons a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="container">
+    <h1><i class="fa-solid fa-calendar-check"></i> Agenda</h1>
+    <p>Uma plataforma pensada para você organizar melhor o seu tempo, manter o foco e ser mais produtivo — sem complicações.</p>
+    <div class="cta-buttons">
+      <a href="{% url 'login' %}"><i class="fa-solid fa-arrow-right-to-bracket"></i> Entrar</a>
+      <a href="{% url 'register' %}"><i class="fa-solid fa-user-plus"></i> Criar Conta</a>
+    </div>
+  </header>
+
+  <section class="features">
+    <div class="container">
+        <div class="features-grid">
+        <div class="feature">
+            <i class="fa-solid fa-bolt"></i>
+            <h3>Sem Fricção</h3>
+            <p>Fluxo de uso rápido, direto ao ponto. Nada de menus confusos.</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-chart-pie"></i>
+            <h3>Dashboard Inteligente</h3>
+            <p>Visualize sua rotina com gráficos e insights automáticos.</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-clock"></i>
+            <h3>Controle de Tempo</h3>
+            <p>Acompanhe quanto tempo está gastando em cada atividade.</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-users-gear"></i>
+            <h3>Colaboração</h3>
+            <p>Crie tarefas em equipe, delegue e acompanhe o progresso.</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-bell"></i>
+            <h3>Lembretes</h3>
+            <p>Notificações sutis pra não deixar nada passar batido.</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Privacidade e Segurança</h3>
+            <p>Dados criptografados e acesso seguro. Sua produtividade é sua.</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>Organização por Categorias</h3>
+            <p>Separe suas tarefas por áreas, temas ou projetos com tags e filtros.</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <h3>100% Mobile</h3>
+            <p>Acesse de qualquer lugar, com uma experiência fluida no celular.</p>
+        </div>
+        </div>
+    </div>
+  </section>
+
+
+  <section class="how-it-works container">
+    <div class="how-grid">
+      <div class="how-step">
+        <h3>1. Crie sua conta</h3>
+        <p>Leva menos de 1 minuto. Sem cartão, sem complicação.</p>
+      </div>
+      <div class="how-step">
+        <h3>2. Comece a usar</h3>
+        <p>Adicione tarefas, crie categorias e monitore seu dia.</p>
+      </div>
+      <div class="how-step">
+        <h3>3. Colha os resultados</h3>
+        <p>Tenha clareza do que importa e foque no que te faz avançar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p>Simplesmente a melhor ferramenta que já usei pra organizar minha rotina de trabalho. Recomendo!</p>
+          <strong>— João P., Gestor de Projetos</strong>
+        </div>
+        <div class="testimonial">
+          <p>Estava procurando algo que não fosse cheio de firulas... essa ferramenta acertou em cheio. Rápida e eficaz.</p>
+          <strong>— Camila A., Designer</strong>
+        </div>
+        <div class="testimonial">
+          <p>Usei pra organizar meu dia como freelancer e a produtividade subiu real. O sistema de lembrete é top!</p>
+          <strong>— Felipe R., Desenvolvedor</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <a href="#">Início</a>
+      <a href="{% url 'login' %}">Login</a>
+      <a href="{% url 'register' %}">Registrar</a>
+      <a href="#">Termos</a>
+    </nav>
+    <p>&copy; 2025 Agenda. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
