@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 # TempoÁgil
 
 TempoÁgil é um sistema de agenda e produtividade desenvolvido em Django, com foco em organização pessoal e de equipes. O projeto possui autenticação de usuários, cadastro de tarefas, projetos, notas, calendário, tags e notificações, com interface moderna e responsiva.
@@ -87,5 +89,5 @@ Agenda/
 
 ## Licença
 
-Este projeto está sob a licença MIT.
+Licensed under the MIT License (see LICENSE file)
 # Agenda
